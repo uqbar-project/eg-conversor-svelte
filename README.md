@@ -1,6 +1,8 @@
 
 # Conversor en Svelte
 
+[![Build](https://github.com/uqbar-project/eg-conversor-svelte/actions/workflows/build.yml/badge.svg)](https://github.com/uqbar-project/eg-conversor-svelte/actions/workflows/build.yml) [![codecov](https://codecov.io/gh/uqbar-project/eg-conversor-svelte/graph/badge.svg?token=daKfbHaKfG)](https://codecov.io/gh/uqbar-project/eg-conversor-svelte)
+
 Este proyecto representa el clásico ejemplo del conversor de millas a kilómetros, generado con [`sv`](https://github.com/sveltejs/cli), con las siguientes configuraciones:
 
 - Typescript
