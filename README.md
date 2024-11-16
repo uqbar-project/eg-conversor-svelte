@@ -3,6 +3,8 @@
 
 [![Build](https://github.com/uqbar-project/eg-conversor-svelte/actions/workflows/build.yml/badge.svg)](https://github.com/uqbar-project/eg-conversor-svelte/actions/workflows/build.yml) [![codecov](https://codecov.io/gh/uqbar-project/eg-conversor-svelte/graph/badge.svg?token=daKfbHaKfG)](https://codecov.io/gh/uqbar-project/eg-conversor-svelte)
 
+![demo](./videos/demo.gif)
+
 Este proyecto representa el clásico ejemplo del conversor de millas a kilómetros, generado con [`sv`](https://github.com/sveltejs/cli), con las siguientes configuraciones:
 
 - Typescript
@@ -61,4 +63,21 @@ La propiedad `data-testid` nos sirve para encontrar fácilmente los elementos de
 - que podemos convertir exitosamente de millas a kilómetros (y también verificamos que la conversión se haga respetando el locale castellano con la coma decimal)
 - y por último probamos el botón de Reset
 
-El lector puede ver los tests y su configuración con Testing Library.
+Testing Library ofrece una técnica simple para el testeo de una página:
+
+- tiene una función `render` propia, que guarda el DOM en una variable global, screen
+- luego es posible acceder a los elementos del DOM mediante funciones helpers (nosotros vamos a preferir por `data-testid` para no utilizar cosas que el usuario pueda cambiar, contrariamente a la opinión que tiene el creador de la biblioteca Testing Library)
+- y también tenemos funciones de alto nivel para simular la escritura de un input o presionar click en un botón
+
+Dejamos el ejemplo del test del flujo feliz: escribimos millas y se convierten a kilómetros:
+
+```ts
+it('should convert valid miles to kilometers to locale es', async () => {
+  render(Conversor)
+
+  const miles = screen.getByTestId('millas') as HTMLInputElement
+  await userEvent.type(miles, '100')
+  const kilometers = screen.getByTestId('kilometers')
+  expect(kilometers.innerHTML).to.equal('160,934')
+})
+```
