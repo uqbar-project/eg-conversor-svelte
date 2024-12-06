@@ -14,9 +14,8 @@ export default [
   eslintPluginPrettierRecommended, // must be last to override conflicting rules.
   {
     rules: {
-      semi: ['warn', 'always'],
       quotes: ['warn', 'single', { avoidEscape: true, allowTemplateLiterals: true }],
-      'semi': 'error',
+      semi: ['error', 'never'],
       'no-nested-ternary': 'error',
       'linebreak-style': ['error', 'unix'],
       'no-cond-assign': ['error', 'always'],
