@@ -1,4 +1,4 @@
-<script lang='ts'>
+<script lang="ts">
   import './styles.css'
   import { convertMilesToKms } from '$lib'
 
@@ -12,17 +12,17 @@
   }
 </script>
 
-<div class='form'>
+<div class="form">
   <h1>Conversor millas a kms</h1>
-  <div class='row'>
-    <label for='millas' class='label'>Millas</label>
-    <input type='number' data-testid='millas' bind:value={miles} />
+  <div class="row">
+    <label for="millas" class="label">Millas</label>
+    <input type="number" data-testid="millas" bind:value={miles} />
   </div>
-  <div class='row'>
-    <label for='kilometros' class='label'>Kilómetros</label>
-    <span data-testid='kilometers'>{kilometers}</span>
+  <div class="row">
+    <label for="kilometros" class="label">Kilómetros</label>
+    <span data-testid="kilometers">{kilometers}</span>
   </div>
-  <div class='row'>
-    <button class='button secondary' data-testid='reset' onclick={reset}>Resetear</button>
+  <div class="row">
+    <button class="button secondary" data-testid="reset" onclick={reset}>Resetear</button>
   </div>
 </div>
