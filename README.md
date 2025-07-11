@@ -24,12 +24,12 @@ Lo bueno es que Svelte necesita de esos pocos conceptos dentro de nuestra págin
 
 ```sv
 <script lang="ts">
-	import { convertMilesToKms } from '$lib'
+  import { convertMilesToKms } from '$lib'
 
   const formattedNumber = (value: number) => value.toLocaleString('es');
 
-	let miles = $state(0)
-	let kilometers = $derived(formattedNumber(convertMilesToKms(miles)))
+  let miles = $state(0)
+  let kilometers = $derived(formattedNumber(convertMilesToKms(miles)))
   ...
 </script>
 
