@@ -63,6 +63,11 @@ h1 {
   margin: 0 0.5rem;
 }
 
+.button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 0 3px var(--box-shadow-color);
+}
+
 .primary {
   background-color: var(--primary-background-color);
   color: white;
