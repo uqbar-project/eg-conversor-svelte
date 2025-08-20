@@ -12,7 +12,7 @@ export default defineConfig({
     setupFiles: ['./vitest-setup.js'],
     coverage: {
       provider: 'v8',
-      reporter: ['text', 'lcov'],
+      reporter: ['text', 'lcov', 'html'],
       reportsDirectory: './coverage',
       include: ['src'],
       exclude: ['src/routes/+layout.svelte'],
