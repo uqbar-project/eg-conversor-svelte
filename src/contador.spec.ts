@@ -30,9 +30,8 @@ describe('Conversor', () => {
 
     const miles = screen.getByTestId('millas') as HTMLInputElement
     await userEvent.type(miles, '100')
-    const user = userEvent.setup()
     
-    await user.click(screen.getByTestId('reset'))
+    await userEvent.click(screen.getByTestId('reset'))
 
     expect(miles.value).to.equal('0')
     const kilometers = screen.getByTestId('kilometers')
